@@ -9,11 +9,6 @@ class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.btn_notes)
-
-    def btn_notes(self):
-        new_window = Ui_Dialog
-        new_window.show()
 
 
 if __name__ == '__main__':

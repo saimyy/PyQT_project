@@ -1,16 +1,14 @@
-from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from note_ui import Ui_Dialog
+from PyQt5 import uic
 import sys
+from note_ui import Ui_Dialog
 
-
-class NotesApp(QWidget, Ui_Dialog):
+class NotesApp(QMainWindow, Ui_Dialog):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.addBtn.clicked.connect(self.add_note)
-        self.deleteBtn.clicked.connect(self.delete_note)
-        self.setFixedSize(400, 300)
+        self.pushButton_2.clicked.connect(self.delete_note)
 
     def add_note(self):
         note_text = self.new_note.text()
