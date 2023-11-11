@@ -1,6 +1,9 @@
 import sys
+from PyQt5 import uic
 import sqlite3
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QDialog, QVBoxLayout, QTabWidget, QMainWindow, QPushButton, \
+    QTableWidget, QTableWidgetItem
+from olymp import OlympicsInfoWidget
 
 
 class TableWidgetExample(QMainWindow):
@@ -8,6 +11,7 @@ class TableWidgetExample(QMainWindow):
         super().__init__()
         self.initUI()
         self.load_data_from_database()
+        self.res = None
 
     def initUI(self):
         self.setWindowTitle('Главное окно')
@@ -22,7 +26,6 @@ class TableWidgetExample(QMainWindow):
         self.central_widget.setLayout(self.layout)
 
     def load_data_from_database(self):
-        # Подключение к базе данных
         connection = sqlite3.connect('db')
         cursor = connection.cursor()
         cursor.execute('SELECT name, date FROM main_window')
@@ -51,11 +54,18 @@ class TableWidgetExample(QMainWindow):
         if isinstance(button, QPushButton):
             row = self.tableWidget.indexAt(button.pos()).row()
             id = self.tableWidget.item(row, 0).text()
-            name = self.tableWidget.item(row, 1).text()
+            if id == 'Высшая проба':
+                if not self.res:
+                    self.res = OlympicsInfoWidget('Высшая проба', 'vshe')
+                self.res.show()
+
+def except_hook(cls, exception, traceback):
+    sys.__excepthook__(cls, exception, traceback)
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = TableWidgetExample()
+    sys.excepthook = except_hook
     ex.show()
     sys.exit(app.exec_())
