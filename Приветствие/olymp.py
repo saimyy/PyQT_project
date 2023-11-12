@@ -1,10 +1,8 @@
 import sys
-from PyQt5 import uic
 import sqlite3
-from PyQt5.QtWidgets import QApplication, QWidget, QDialog, QVBoxLayout, QTabWidget, QMainWindow, QPushButton, \
-    QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from u import Ui_MainWindow
-from заметки.notes import NoteApp
+from Приветствие.notes import NoteApp
 
 
 class OlympicsInfoWidget(QMainWindow, Ui_MainWindow):
@@ -19,8 +17,9 @@ class OlympicsInfoWidget(QMainWindow, Ui_MainWindow):
         self.res = None
 
     def do_note(self):
+        bd = self.db
         if not self.res:
-            self.res = NoteApp(self.db)
+            self.res = NoteApp(bd)
         self.res.show()
 
     def refresh_info(self, name_ol):

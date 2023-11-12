@@ -16,7 +16,7 @@ class TableWidgetExample(QMainWindow):
     def initUI(self):
         self.setWindowTitle('Главное окно')
         self.setGeometry(100, 100, 400, 400)
-
+        self.setFixedSize(400, 400)
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
 
@@ -55,9 +55,36 @@ class TableWidgetExample(QMainWindow):
             row = self.tableWidget.indexAt(button.pos()).row()
             id = self.tableWidget.item(row, 0).text()
             if id == 'Высшая проба':
-                if not self.res:
-                    self.res = OlympicsInfoWidget('Высшая проба', 'vshe')
+                self.res = OlympicsInfoWidget('Высшая проба', 'vshe')
                 self.res.show()
+            elif id == 'Всесиб':
+                self.res = OlympicsInfoWidget('Всесиб', 'vsesib')
+                self.res.show()
+            elif id == 'Innopolis':
+                self.res = OlympicsInfoWidget('Innopolis', 'innopolis')
+                self.res.show()
+            elif id == 'МОШ':
+                self.res = OlympicsInfoWidget('МОШ', 'mosh')
+                self.res.show()
+            elif id == 'СПБГУ':
+                self.res = OlympicsInfoWidget('СПБГУ', 'spbgu')
+                self.res.show()
+            elif id == 'Технокубок':
+                self.res = OlympicsInfoWidget('Технокубок', 'tcup')
+                self.res.show()
+            elif id == 'ИТМО':
+                self.res = OlympicsInfoWidget('ИТМО', 'ITMO')
+                self.res.show()
+            elif id == 'Когнитивные технологии':
+                self.res = OlympicsInfoWidget('Когнитивные технологии', 'kogn_techn')
+                self.res.show()
+            elif id == 'Шаг в будущее':
+                self.res = OlympicsInfoWidget('Шаг в будущее', 'kogn_techn')
+                self.res.show()
+            elif id == 'Бельчонок':
+                self.res = OlympicsInfoWidget('Шаг в будущее', 'bel')
+                self.res.show()
+
 
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)

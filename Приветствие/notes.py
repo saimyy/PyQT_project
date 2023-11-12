@@ -1,7 +1,7 @@
 import sys
 import sqlite3
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLineEdit, QPushButton, QListWidget
-from заметки.note_ui import Ui_Dialog
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from Приветствие.note_ui import Ui_Dialog
 
 
 class NoteApp(QMainWindow, Ui_Dialog):
@@ -55,7 +55,7 @@ def except_hook(cls, exception, traceback):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    note_app = NoteApp('vshe')
+    note_app = NoteApp()
     note_app.show()
     sys.excepthook = except_hook
     sys.exit(app.exec_())
