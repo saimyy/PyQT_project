@@ -1,7 +1,7 @@
 import sys
 import sqlite3
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from Приветствие.note_ui import Ui_Dialog
+from Main_program.note_ui import Ui_Dialog
 
 
 class NoteApp(QMainWindow, Ui_Dialog):

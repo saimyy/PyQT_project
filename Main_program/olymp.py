@@ -2,7 +2,7 @@ import sys
 import sqlite3
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from u import Ui_MainWindow
-from Приветствие.notes import NoteApp
+from Main_program.notes import NoteApp
 
 
 class OlympicsInfoWidget(QMainWindow, Ui_MainWindow):
