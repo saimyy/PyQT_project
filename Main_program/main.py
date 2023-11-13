@@ -75,8 +75,8 @@ class TableWidgetExample(QMainWindow):
             elif id == 'ИТМО':
                 self.res = OlympicsInfoWidget('ИТМО', 'ITMO')
                 self.res.show()
-            elif id == 'Когнитивные технологии':
-                self.res = OlympicsInfoWidget('Когнитивные технологии', 'kogn_techn')
+            elif id == 'Когнитивные Технологии':
+                self.res = OlympicsInfoWidget('Когнитивные Технологии', 'kogn_techn')
                 self.res.show()
             elif id == 'Шаг в будущее':
                 self.res = OlympicsInfoWidget('Шаг в будущее', 'kogn_techn')
