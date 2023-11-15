@@ -1,5 +1,6 @@
 https://docs.google.com/document/d/14Cr-Dzq4LxFsplEpjEtjN7j6oOV5SZ4hWdNcQifU-FA/edit?usp=sharing
-ЗАПИСКА!!!!!!!!!!!!!
+https://docs.google.com/presentation/d/14kvYqyb4Ft9QR56NBv17jGGQ6NMbmQCw/edit?usp=sharing&ouid=111670059113123003205&rtpof=true&sd=true
+ЗАПИСКА И ПРИЗЕНТАЦИЯ!!!!!!!!!!!!!
 
 
 
